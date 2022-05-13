@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Game</title>
+</head>
+<body>
+    <script>
+        var start = 'n'
+        while(start == 'n' || start !== 'y'){
+            start = prompt('Wanna Play Guess Game? (y/n) Only 3 chances are available.')
+        }
+        
+        const num = Math.floor(Math.random() * 10) + 1;
+        var count = 1;
+        var entry;
+        while(count<=3){
+            entry = prompt('Guess Number between 1 to 10')
+            if(entry > num){
+                console.log('Please Guess Lower')
+                count++
+            } else if(entry < num){
+                console.log('Please Guess Higher')
+                count++
+            } else {
+                console.log('Congrats Your Guess is Correct')
+                count = 4;
+            }
+        }
+        
+       alert(`Sorry, you loose. The number was ${num}`) 
+    </script>
+</body>
+</html>
